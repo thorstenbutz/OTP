@@ -7,7 +7,7 @@ Get-Command -Module 'OTP'
 Get-Alias -Name '*OTP*' 
 ```
 
-The OTP module provides [HOTP (RFC 4226)](https://www.ietf.org/rfc/rfc4226.txt) and [TOTP (RFC 6238)](https://www.ietf.org/rfc/rfc6328.txt)  functionality for [MFA/2FA](https://en.wikipedia.org/wiki/Multi-factor_authentication) within PowerShell. The module itself is written in PowerShell, using the [Otp.NET.dll](https://www.nuget.org/packages/Otp.NET) and [ZXing.dll](https://github.com/micjahn/ZXing.Net/releases) libraries. 
+The OTP module provides [HOTP (RFC 4226)](https://www.ietf.org/rfc/rfc4226.txt) and [TOTP (RFC 6238)](https://www.ietf.org/rfc/rfc6328.txt)  functionality for [MFA/2FA](https://en.wikipedia.org/wiki/Multi-factor_authentication). The module itself is written in PowerShell, using the [Otp.NET.dll](https://www.nuget.org/packages/Otp.NET) and [ZXing.dll](https://github.com/micjahn/ZXing.Net/releases) libraries. 
 
 Cmdlets and aliases: 
 - Get-OTPCode (gotp)
@@ -44,7 +44,7 @@ otpauth://totp/GitHub:thorstenbutz?secret=<b>RXYDZZYTKUWKLNSX</b>&issuer=GitHub
 <pre>otpauth://TYPE/LABEL?PARAMETERS</pre>
 -->
 
-The noteworthy part is located behind the "secret" parameter. **RXYDZZYTKUWKLNSX** is actually nothing more than a randomly generated shared secret created by the service provider (in this case, GitHub). This secret is also known as a 'seed'.
+The noteworthy part is located behind the "secret" parameter. **RXYDZZYTKUWKLNSX** is actually nothing more than a randomly generated shared secret created by the service provider (in this case, GitHub). This secret is also known as a "seed".
 
 The desired OTP code can also be calculated using a bitmap of the QR code and the alphanumeric string.
 
@@ -71,7 +71,7 @@ Rather than having lab users or students repeatedly reconfigure a second factor 
 ```powershell
 Get-ChildItem -Path 'C:\AzureLab\*.png' | Read-OTPQRCode | Get-OTPCode -IncludePath -ShowUI
 ```
-![The -ShowUI parameter](otp-showui.jpg)
+![The -ShowUI parameter](media/otp-showui.jpg)
 
 ## Further reading
 
