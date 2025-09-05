@@ -1,1 +1,4 @@
-/Test-OTPModule.ps1
+# Ignore all files starting with underscore
+_*
+**/_*
+.temp/*
