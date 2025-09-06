@@ -23,8 +23,8 @@ The module is primarily intended for demonstration purposes, showcasing key Powe
 New-OTPSecret -Label 'foo:bar'  
 
 ## Create secret, save QRCode, get TOTP code
-New-OTPSecret -Label 'foo:bar' -SaveQRCode $env:temp\foobar.png 
-Read-OTPQRCode -Path $env:temp\foobar.png | Get-OTPCode
+New-OTPSecret -Label 'foo:bar' -SaveQRCode "$env:temp\foobar.png"
+Read-OTPQRCode -Path "$env:temp\foobar.png" | Get-OTPCode
 
 ## Create a new secret from a given seed
 $mySecret = New-OTPSecret -Seed 'MBT4SFXK3IZB23FO' -Label 'foo:bar' -Issuer 'Contoso' -Tag 'Redmond'
@@ -64,9 +64,7 @@ Code   Algorithm HashAlgorithm Seed
 
 ## Lab environments
 
-Consider lab or testing environments where you might have several test accounts that require MFA authentication. 
-
-Rather than having lab users or students repeatedly reconfigure a second factor on their smartphones, the OTP module provides a simple solution. You can also scan any number of QR codes or alphanumeric seeds and have the OTP codes displayed in a GUI that updates automatically ‒ with a single line of code.
+Consider lab or testing environments where you might have several test accounts that require MFA authentication. Rather than having lab users or students repeatedly reconfigure a second factor on their smartphones, the OTP module provides a simple solution. You can also scan any number of QR codes or alphanumeric seeds and have the OTP codes displayed in a GUI that updates automatically ‒ with a single line of code.
 
 ```powershell
 Get-ChildItem -Path 'C:\AzureLab\*.png' | Read-OTPQRCode | Get-OTPCode -IncludePath -ShowUI
