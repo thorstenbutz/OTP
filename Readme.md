@@ -73,5 +73,6 @@ Get-ChildItem -Path 'C:\AzureLab\*.png' | Read-OTPQRCode | Get-OTPCode -IncludeP
 
 ## Further reading
 
-- [OTP guide](OTP/0.1.1/docs/OTP-Guide.md)
-- [The background story](backstory/backstory.md)
+- [OTP guide (included in the module files)](OTP/0.1.1/docs/OTP-Guide.md)
+- [The backstory](backstory/backstory.md)
+- [An educational guide: The Base32 encoded seed](educational/base32.md)
